@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root{
+    --color-primary: #053873;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f1f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#card {
+    background-color: white;
+    width: 80%;
+    max-width: 20rem;
+    text-align: center;
+    box-shadow: 0rem 0.1rem 1rem 0.1rem #000;
+    border-radius: 1rem;
+}
+
+#upper-container{
+    background-color: var(--color-primary);
+    height: 35%;
+    border-radius: 1rem 1rem 0 0;
+}
+
+#content-container{
+    background-color: white;
+    height: 65%;
+    padding: 0rem 0.8rem;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.img-container{
+    transform: translate(0, 55%);
+}
+
+.img-container img{
+    max-width: 100%;
+    width: 40%;
+    border: 0.4rem solid white;
+    border-radius: 99em;
+    margin-bottom: 1rem;
+}
+
+.card-title{
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    margin-top: 4.5rem;
+}
+
+.card-subtitle{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.card-text{
+    color: gray;
+    font-size: 0.9rem;
+}
+
+.icon-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 2.8rem;
+    
+}
+
+.icon-container p{
+    color: var(--color-primary);
+    font-size: 1.6rem;
+}
