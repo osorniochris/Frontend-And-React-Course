@@ -519,6 +519,7 @@ form.addEventListener('submit', event => {
   event.preventDefault();
   if (songName.value.length > 0) {
     searchSong(songName.value);
+    songName.value = "";
   }
 });
 
