@@ -1,0 +1,16 @@
+{
+  "name": "givemeasong",
+  "version": "1.0.0",
+  "description": "Web app to consume Spotify API",
+  "browserslist": "> 0.2%",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel ./code/index.html -p 3001"
+  },
+  "author": "Christopher Osornio",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "parcel": "^2.0.0-beta.2"
+  }
+}

@@ -1,0 +1,41 @@
+@import "mixins";
+@import "colors";
+
+#search {
+    .container{
+        @include container;
+        #form{
+            padding: 3rem 0;
+            display: flex;
+            justify-content: center;
+
+            .input{
+                background-color: transparent;
+                border: 0;
+                border-bottom: 0.1rem solid $black-color;
+                margin-right: 1rem;
+                font-size: 0.9rem;
+                width: 60%;
+
+                &:focus{
+                    border-bottom: 0.2rem solid $black-color;
+                    outline: 0;
+                }
+            }
+
+            .button{
+                background-color: transparent;
+                padding: 0.4rem;
+                border-radius: 0.5rem;
+                border: 0.2rem solid $black-color;
+                color: $black-color;
+                font-size: 0.9rem;
+                cursor: pointer;
+
+                &:focus{
+                    outline: 0;
+                }
+            }
+        }
+    }
+}
