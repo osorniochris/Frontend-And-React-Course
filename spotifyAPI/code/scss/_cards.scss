@@ -10,19 +10,21 @@
         }
 
         .card{
-            padding: 0 6rem;
-            height: 26rem;
-            width: 26rem;
+            padding: 1rem 6rem;
+            margin-bottom: 3.5rem;
+            height: 28rem;
+            width: 30rem;
 
             h2{
-                margin-bottom: 0.5rem;
+                margin-bottom: 2rem;
             }
 
             .image{
                 width: 80%;
-                height: 60%;
+                height: 48%;
                 display: flex;
                 align-items: center;
+                margin-bottom: 2rem;
 
                 figure{
                     img{
@@ -33,7 +35,7 @@
             }
 
             .info{
-                padding-bottom: 3rem;
+                margin-bottom: 2rem;
                 .song-name{
                     font-weight: 300;
                     font-size: 1rem;
@@ -49,6 +51,7 @@
                 .song-link{
                     text-decoration: none;
                     color: black;
+                    font-weight: 700;
                 }
             }
         }

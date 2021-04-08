@@ -15,6 +15,9 @@ header {
   align-items: center;
   justify-content: center;
 }
+header h1 {
+  font-size: 1.8rem;
+}
 header .container {
   width: 90%;
   margin: 0 0.5rem;
@@ -61,25 +64,27 @@ header .container {
   color: red;
 }
 #display .container .card {
-  padding: 0 6rem;
-  height: 26rem;
-  width: 26rem;
+  padding: 1rem 6rem;
+  margin-bottom: 3.5rem;
+  height: 28rem;
+  width: 30rem;
 }
 #display .container .card h2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
 }
 #display .container .card .image {
   width: 80%;
-  height: 60%;
+  height: 48%;
   display: flex;
   align-items: center;
+  margin-bottom: 2rem;
 }
 #display .container .card .image figure img {
   width: 100%;
   height: 100%;
 }
 #display .container .card .info {
-  padding-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 #display .container .card .info .song-name {
   font-weight: 300;
@@ -96,5 +101,6 @@ header .container {
 #display .container .card .info .song-link {
   text-decoration: none;
   color: black;
+  font-weight: 700;
 }
 /*# sourceMappingURL=index.8d90050c.css.map */
