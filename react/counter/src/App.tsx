@@ -33,7 +33,7 @@ const App = () => {
           <div className="container" id="jumper">
             <p>Counter Jump: </p>
             <button onClick={subtractJump} >−</button>
-            <p>{jump}</p>
+            <p id="value">{jump}</p>
             <button onClick={addJump} >+</button>
           </div>
           <div className="container">
