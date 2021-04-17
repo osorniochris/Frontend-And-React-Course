@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root{
+    --primary-color: #1071df;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f1f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#todo-list{
+    width: 22rem;
+    height: 60%;
+    border-radius: 1rem 1rem 0 0;
+}
+
+#title{
+    margin: 0;
+    padding: 1rem 0;
+    color: var(--primary-color);
+    text-align: center;
+    border-top: 2rem solid var(--primary-color);
+    border-bottom: 0.2rem solid gray;
+    border-radius: 1rem 1rem 0 0;
+    background-color: white;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#filters{
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 1rem;
+}
+#filters button{
+    background-color: transparent;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+#filters button:focus{
+    outline: 0;
+}
+
+#filters button.active{
+    background-color: var(--primary-color);
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    border: 0;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+#filters button.active:focus{
+    outline: 0;
+}
+
+#form{
+    margin: 0;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+#form .input{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 0.1rem solid var(--primary-color);
+    font-size: 0.9rem;
+    margin: 0.4rem 0.4rem;
+}
+
+#form .input:focus{
+    border-bottom: 0.2rem solid var(--primary-color);
+    outline: 0;
+}
+
+#form .button{
+    background-color: transparent;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    background-color: var(--primary-color);
+    border: 0;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+#form .button:focus{
+    outline: 0;
+}
+
+#tasks-container{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#no-tasks{
+    color: gray;
+    font-weight: 300;
+}
+
+#tasks-container .do{
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    background-color: white;
+}
+
+#tasks-container .do .t-container{
+    font-size: 1.2rem;
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+}
+
+#tasks-container .do .t-container span{
+    cursor: pointer;
+}
+
+#tasks-container .do .t-container i{
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+#tasks-container .do .t-container .true{
+    text-decoration: line-through;
+}
+
+#tasks-container .do .edit-container {
+    display: flex;
+    justify-content: space-between;    
+}
+
+#tasks-container .do .edit-container input{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 0.1rem solid var(--primary-color);
+    font-size: 0.9rem;
+}
+
+#tasks-container .do .edit-container input:focus{
+    border-bottom: 0.2rem solid var(--primary-color);
+    outline: 0;
+}
+
+#tasks-container .do .edit-container #cancel{
+    background-color: transparent;
+    padding: 0.1rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-left: 0.1rem;
+}
+
+#tasks-container .do .edit-container #save{
+    background-color: var(--primary-color);
+    padding: 0.1rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid transparent;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
