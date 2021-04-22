@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import TaskForm  from './components/TaskForm';
 import TodoItem from './components/TodoItem';
+import { isPast } from 'date-fns';
 import "./App.css"
 
 
 const FILTER_MAP = {
     All : () => true,
-    Active : (todo) => !todo.completed,
-    Completed : (todo) => todo.completed
+    Active : (todo) => !todo.completed && !isPast(new Date(todo.date)) ,
+    Completed : (todo) => todo.completed,
+    Expired: (todo) => isPast(new Date(todo.date))
 }
 
 const filterKeys = Object.keys(FILTER_MAP);
@@ -19,6 +21,7 @@ const App = () => {
 
     const [todos, setTodos] = useState(initialState);
     const [filter, setFilter] = useState(filterInitialState);
+    const [windowIsActive, setWindowIsActive] = useState(true);
 
     useEffect(() => {
         localStorage.setItem("todos", JSON.stringify(todos));
@@ -27,6 +30,25 @@ const App = () => {
     useEffect(() => {
         localStorage.setItem("filter", filter);
     }, [filter])
+
+    useEffect(() => {
+        const handleActivityFalse = () => {
+            setWindowIsActive(false);
+        };
+
+        const handleActivityTrue = () => {
+            setWindowIsActive(true);
+            setTodos(JSON.parse(localStorage.getItem("todos") || "[]"));
+        };
+
+        window.addEventListener('focus', handleActivityTrue);
+        window.addEventListener('blur', handleActivityFalse);
+
+        return () => {
+            window.removeEventListener('focus', handleActivityTrue);
+            window.removeEventListener('blur', handleActivityFalse);
+        };
+    }, [windowIsActive]);
 
     const deleteTodo = (id) => {
         setTodos(todos.filter(todo => todo.id !== id));
@@ -41,10 +63,10 @@ const App = () => {
         setTodos(newTodos);
     }
 
-    const editTodo = (id, desc) =>{
+    const editTodo = (id, desc, date) =>{
         const newTodos = todos.map(todo =>{
             if (todo.id === id){
-                return {...todo, desc};
+                return {...todo, desc, date};
             }
             return todo;
         })
@@ -78,11 +100,12 @@ const App = () => {
             <ul id="tasks-container">
                 {
                     todos.length > 0?
-                    todos.filter(FILTER_MAP[filter]).map(({id, desc, completed}) => (
+                    todos.filter(FILTER_MAP[filter]).map(({id, desc, completed, date}) => (
                         <TodoItem 
                             key={id} 
                             id={id} 
                             desc={desc} 
+                            date={date}
                             completed={completed}
                             deleteTodo={deleteTodo}
                             handleChangeCompleted={handleChangeCompleted}

@@ -15,8 +15,8 @@ body{
     background-color: #f2f1f2;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100vw;
+    margin-top: 5rem;
+    width: 98vw;
     height: 100vh;
 }
 
@@ -47,11 +47,11 @@ body{
 }
 #filters button{
     background-color: transparent;
-    padding: 0.4rem;
+    padding: 0.2rem;
     border-radius: 0.5rem;
     border: 0.1rem solid var(--primary-color);
     color: var(--primary-color);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     cursor: pointer;
 }
 
@@ -76,21 +76,38 @@ body{
 #form{
     margin: 0;
     padding: 1.5rem 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
     background-color: white;
 }
 
 #form .input{
     background-color: transparent;
+    text-align: center;
     border: 0;
     border-bottom: 0.1rem solid var(--primary-color);
     font-size: 0.9rem;
-    margin: 0.4rem 0.4rem;
+    margin-bottom: 0.8rem;
+    width: 19rem;
 }
 
 #form .input:focus{
+    border-bottom: 0.2rem solid var(--primary-color);
+    outline: 0;
+}
+
+#form .date-input{
+    border-radius: 0 !important;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 0.1rem solid var(--primary-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    width: 19rem;
+}
+
+#form .date-input:focus{
     border-bottom: 0.2rem solid var(--primary-color);
     outline: 0;
 }
@@ -126,6 +143,18 @@ body{
     background-color: white;
 }
 
+#tasks-container .do .date.true{
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: red;
+}
+
+#tasks-container .do .date.false{
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: gray;
+}
+
 #tasks-container .do .t-container{
     font-size: 1.2rem;
     font-weight: 300;
@@ -152,6 +181,7 @@ body{
 }
 
 #tasks-container .do .edit-container input{
+    padding-left: 0.8rem;
     background-color: transparent;
     border: 0;
     border-bottom: 0.1rem solid var(--primary-color);
@@ -182,4 +212,45 @@ body{
     color: white;
     font-size: 0.9rem;
     cursor: pointer;
+}
+
+.calendar-modal{
+    transform: translate(0, 12rem);
+}
+
+.calendar-header{
+    background-color: var(--primary-color) !important;
+}
+
+.daysList-day.is-pointer.is-selected-day{
+    background-color: var(--primary-color) !important;
+}
+
+.daysList-day.is-pointer.is-today{
+    box-shadow:inset 0 0 0 2px var(--primary-color) !important;
+}
+
+.monthList_month.is-selected-month{
+    color: var(--primary-color) !important;
+}
+
+.yearList_year.is-selectedYearRef{
+    color: var(--primary-color) !important;
+}
+
+.date-edit-input{
+    text-align: start !important;
+    border-radius: 0 !important;
+    padding-left: 0.8rem !important;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 0.1rem solid var(--primary-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    width: 11.5rem;
+}
+
+#form .date-edit-input:focus{
+    border-bottom: 0.2rem solid var(--primary-color);
+    outline: 0;
 }
