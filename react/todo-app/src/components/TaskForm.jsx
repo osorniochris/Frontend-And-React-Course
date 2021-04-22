@@ -36,7 +36,7 @@ const TaskForm = ({todos, setTodos}) => {
             <DtPicker 
                 onChange={setDate} 
                 withTime
-                placeholder= "Expire date and hour"
+                placeholder= "Expiration date and hour"
                 inputClass= "date-input" 
                 calenderModalClass="calendar-modal"
                 headerClass="calendar-header"
